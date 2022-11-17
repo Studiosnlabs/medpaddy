@@ -25,7 +25,7 @@ class MedPaddyAppBar extends StatelessWidget implements PreferredSizeWidget {
       ] ,
       bottom: PreferredSize(
     child: Container(
-      margin: EdgeInsets.only(right: 200),
+      margin: EdgeInsets.only(right: 200,bottom: 5),
     color: Colors.white,
       child: medPaddyTxtSvg
     ),
