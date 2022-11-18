@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'MedPaddy',
       theme: theme.copyWith(
-          colorScheme: theme.colorScheme.copyWith(primary:primaryGreen,secondary:secondaryDarkBlue ),),
+          colorScheme: theme.colorScheme.copyWith(primary:primaryGreen,secondary:secondaryDarkBlue ),iconTheme: IconThemeData(color: secondaryDarkBlue)),
 
       home:  SelfExamScreen(),
       routes: {

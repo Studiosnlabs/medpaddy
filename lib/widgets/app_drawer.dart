@@ -35,14 +35,14 @@ class AppDrawer extends StatelessWidget {
 
           ListTile(
             leading: Icon(CustomIcons.comment_empty,color: Color(0xff0D0428),),
-            title: Text('Orders',style: TextStyle(color: Colors.white)),
+            title: Text('Chats',style: TextStyle(color: Colors.white)),
             onTap: () {
               // Navigator.of(context).pushReplacementNamed(OrdersScreen.routeName);
             },
           ),
           ListTile(
             leading: Icon(CustomIcons.invite,color: Color(0xff0D0428),),
-            title: Text('Manage Products' ,style: TextStyle(color: Colors.white),),
+            title: Text('Invite Friends' ,style: TextStyle(color: Colors.white),),
             onTap: () {},
           ),
 
