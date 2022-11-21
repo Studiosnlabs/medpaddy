@@ -23,28 +23,28 @@ class Hospitals {
         location: "143 Nungua Link",
         gps: "Open 24 hours",
         workingHours: "GA -153- 1844",
-        logo: 'assets/images/inkoom.png'),
+        logo: 'assets/images/neuro.png'),
     Hospital(
         id: DateTime.now().toString(),
         name: 'Chrispod Diagnostic Centre',
         location: "143 Nungua Link",
         gps: "Open 24 hours",
         workingHours: "GA -153- 1844",
-        logo: 'assets/images/inkoom.png'),
+        logo: 'assets/images/Chrispod.png'),
     Hospital(
         id: DateTime.now().toString(),
         name: 'Elmash Heath Care ',
         location: "143 Nungua Link",
         gps: "Open 24 hours",
         workingHours: "GA -153- 1844",
-        logo: 'assets/images/inkoom.png'),
+        logo: 'assets/images/elmash.png'),
     Hospital(
         id: DateTime.now().toString(),
         name: 'Empat Caiquo Hospital',
         location: "143 Nungua Link",
         gps: "Open 24 hours",
         workingHours: "GA -153- 1844",
-        logo: 'assets/images/inkoom.png'),
+        logo: 'assets/images/empat.png'),
   ];
 
 

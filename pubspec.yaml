@@ -86,6 +86,11 @@ flutter:
     - assets/images/empat.png
     - assets/images/inkoom.png
     - assets/images/neuro.png
+    - assets/images/adbanner.jpg
+    - assets/images/appointmentIcon.svg
+    - assets/images/cardIcon.svg
+    - assets/images/bellIcon.svg
+    - assets/images/contactIcon.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

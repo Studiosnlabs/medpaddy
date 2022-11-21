@@ -90,14 +90,14 @@ class _SelfExamScreenState extends State<SelfExamScreen> {
                         color: Color(0xff55C97C),
                       )),
                   onPressed: () {
-                    Navigator.of(context).pushNamed(HosptialScreen.routeName);
+                    Navigator.of(context).pushNamed(HospitalScreen.routeName);
                   },
                   color: const Color(0xff55C97C),
                   child: const Text('Submit',style: TextStyle(color: Colors.white),),
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed(HosptialScreen.routeName);
+                    Navigator.of(context).pushNamed(HospitalScreen.routeName);
                   },
                   child:const Text(
                     'Skip',
