@@ -45,6 +45,7 @@ dev_dependencies:
   http: ^0.13.5
   shared_preferences: ^2.0.15
   flutter_svg: ^1.1.6
+  flutter_datetime_picker: ^1.5.1
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -91,6 +92,9 @@ flutter:
     - assets/images/cardIcon.svg
     - assets/images/bellIcon.svg
     - assets/images/contactIcon.svg
+    - assets/images/F.png
+    - assets/images/M.png
+    - assets/images/qr-code.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

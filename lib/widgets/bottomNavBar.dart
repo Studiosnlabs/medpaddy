@@ -10,12 +10,13 @@ class _bottomNavBarState extends State<bottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      clipBehavior: Clip.hardEdge,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-            topRight: Radius.circular(30), topLeft: Radius.circular(30),bottomRight:Radius.circular(30),bottomLeft: Radius.circular(30) ),
+            topRight: Radius.circular(60), topLeft: Radius.circular(60),bottomRight:Radius.circular(60),bottomLeft: Radius.circular(60) ),
         boxShadow: [
-          BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 60),
+          BoxShadow(color: Colors.black12, spreadRadius: 0, blurRadius: 60),
         ],
       ),
       child: ClipRRect(

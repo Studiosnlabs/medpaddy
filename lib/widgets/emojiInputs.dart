@@ -17,7 +17,7 @@ class EmojiInputs extends StatelessWidget {
   // final Widget dizzySvg = SvgPicture.asset('assets/images/dizzy.svg',
   //     semanticsLabel: 'Dizzy emoji');
 
-  final String exhaustedImg='assets/images/exhaustedemojip.png';
+  final String fitImg='assets/images/exhaustedemojip.png';
   final String tiredImg='assets/images/tiredp.png';
   final String sickImg='assets/images/sickemojip.png';
   final String dizzyImg='assets/images/dizzyemojip.png';
@@ -37,10 +37,10 @@ class EmojiInputs extends StatelessWidget {
         crossAxisCount: 2,
         padding: const EdgeInsets.all(10.0),
         children: <Widget>[
-          EmojiItem(exhaustedImg,"Exhausted"),
-          EmojiItem(tiredImg, "Tired"),
-          EmojiItem(sickImg, "Sick"),
-          EmojiItem(dizzyImg, "Dizzy"),
+          EmojiItem(tiredImg,"Tired",0xff63D59F),
+          EmojiItem(fitImg, "Fit",0xff78E8D5),
+          EmojiItem(sickImg, "Sick",0xff56CA7F),
+          EmojiItem(dizzyImg, "Dizzy",0xff2FCCAD),
 
         ],
       ),
