@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'MedPaddy',
         theme: theme,
-        home: PrescriptionRemindersScreen(),
+        home: SignInScreen(),
         routes: {
           FirstAidScreen.routeName: (ctx) => FirstAidScreen(),
           SignUp.routeName: (ctx) => const SignUp(),

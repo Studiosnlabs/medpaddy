@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medpaddy/screens/SignUp_screen.dart';
-import 'package:flutter_password_strength/flutter_password_strength.dart';
 
 import '../widgets/auth_fields.dart';
 
@@ -14,7 +13,6 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  final _form = GlobalKey<FormState>();
   String phoneNumber = '';
   String password = '';
 
@@ -68,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 style: TextStyle(fontSize: 26, color: Color(0xff36415D)),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 40.0),
+                padding: const EdgeInsets.only(bottom: 15.0),
                 child: const Text(
                   "Sign In",
                   style: TextStyle(
@@ -88,9 +86,6 @@ class _SignInScreenState extends State<SignInScreen> {
                         Padding(
                             padding: const EdgeInsets.only(top: 15.0),
                             child: password_field),
-                        FlutterPasswordStrength(
-                          password: password_field.textEntered,
-                        ),
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
@@ -108,7 +103,22 @@ class _SignInScreenState extends State<SignInScreen> {
                               side: BorderSide(
                                 color: Theme.of(context).colorScheme.tertiary,
                               )),
-                          onPressed: () {},
+                          onPressed: () {
+                            if (phoneNumberField.textEntered!.length < 10 ||
+                                phoneNumberField.textEntered!.length > 10 ||
+                                phoneNumberField.textEntered!.startsWith('0') ||
+                                phoneNumberField.textEntered!.isEmpty) {
+                              final snackBar = SnackBar(
+                                content:
+                                    Text('Please enter a valid phone number'),
+                                backgroundColor: Theme.of(context).errorColor,
+                              );
+
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                              return;
+                            }
+                          },
                           color: Theme.of(context).colorScheme.tertiary,
                           child: const Text(
                             "Sign In",
@@ -116,8 +126,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsets.only(top: 10.0, bottom: 10),
+                          padding: const EdgeInsets.only(top: 10.0, bottom: 10),
                           child: Text(
                             'OR',
                             style: TextStyle(color: Color(0xff36415D)),
@@ -128,8 +137,8 @@ class _SignInScreenState extends State<SignInScreen> {
                           children: <Widget>[
                             GestureDetector(
                               child: new Text('Don\'t have an account?',
-                                  style: new TextStyle(
-                                      color: Color(0xFF2E3233))),
+                                  style:
+                                      new TextStyle(color: Color(0xFF2E3233))),
                               onTap: () {},
                             ),
                             GestureDetector(

@@ -5,7 +5,7 @@
    <application
         android:label="medpaddy"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/ic_launcher">
 
        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBoot"
            android:exported="true">

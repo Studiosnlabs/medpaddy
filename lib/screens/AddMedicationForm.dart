@@ -645,7 +645,7 @@ class _AddMedicationFormState extends State<AddMedicationForm> {
                                       return Row(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(right: 100.0,left: 5.0),
+                                            padding: const EdgeInsets.only(right: 80.0,left: 5.0),
                                             child: Text(DateFormat.jm().format((dosages?.elementAt(i).dateTime)!),style: TextStyle(color: Colors.white),),
                                           ),
                                           Text((dosages?.elementAt(i).quantity)!,style:TextStyle(color: Colors.white)),
