@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class PrimarySecondaryButton extends StatefulWidget {
-   String primaryText;
-   String secondaryText;
-   String primaryRoute;
-   String secondaryRoute;
-   Function primaryAction;
+   String? primaryText;
+   String? secondaryText;
+   String? primaryRoute;
+   String? secondaryRoute;
+   Function? primaryAction;
 
   PrimarySecondaryButton(
       {this.primaryText,
@@ -32,11 +32,11 @@ class _PrimarySecondaryButtonState extends State<PrimarySecondaryButton> {
               )),
           onPressed: () {
             // TODO: add function to be passed here to be run by external widget
-            widget.primaryAction();
+            widget.primaryAction!();
           },
           color: const Color(0xff55C97C),
           child: Text(
-            widget.primaryText,
+            widget.primaryText!,
             style: TextStyle(color: Colors.white),
           ),
         ),
@@ -45,7 +45,7 @@ class _PrimarySecondaryButtonState extends State<PrimarySecondaryButton> {
             Navigator.of(context).pop();
           },
           child: Text(
-            widget.secondaryText,
+            widget.secondaryText!,
             style: TextStyle(color: Color(0xff0D0428)),
           ),
         ),

@@ -4,7 +4,11 @@ import 'package:medpaddy/screens/Hospitals%20Screen.dart';
 import 'package:medpaddy/widgets/PrimarySecondaryButtons.dart';
 import 'package:medpaddy/widgets/emojiInputs.dart';
 
+import 'HomeScreen.dart';
+
 class SelfExamScreen extends StatefulWidget {
+  static const routeName = '/selfExam';
+
   @override
   State<SelfExamScreen> createState() => _SelfExamScreenState();
 }
@@ -18,26 +22,29 @@ class _SelfExamScreenState extends State<SelfExamScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          decoration: BoxDecoration( gradient: LinearGradient(
-            colors: [
-              Color(0xff55C97C).withOpacity(0.5),
-              Color(0xff7AEADA).withOpacity(0.9),
-            ],
-            begin: Alignment.centerLeft,
-            end: Alignment.centerRight,
-            stops: [0, 1],
-          ),),
-          child: SingleChildScrollView(
-      child: Column(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color(0xff55C97C).withOpacity(0.5),
+            Color(0xff7AEADA).withOpacity(0.9),
+          ],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          stops: [0, 1],
+        ),
+      ),
+      child: SingleChildScrollView(
+        child: Column(
           children: <Widget>[
             Container(
                 alignment: Alignment.topRight,
-                margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
                 child: const Text(
                   'Emergency',
                   textAlign: TextAlign.right,
-                  style:
-                      TextStyle(color: Color(0xff0D0428), fontFamily: 'Poppins'),
+                  style: TextStyle(
+                      color: Color(0xff0D0428), fontFamily: 'Poppins'),
                 )),
             Padding(
               padding: const EdgeInsets.fromLTRB(10.0, 8.0, 0, 0),
@@ -59,8 +66,10 @@ class _SelfExamScreenState extends State<SelfExamScreen> {
                 alignment: Alignment.topLeft,
                 margin: const EdgeInsets.symmetric(vertical: 1, horizontal: 20),
                 child: const Text('DevNest',
-                    style: TextStyle(color: Color(0xff0D0428), fontSize: 25
-                        ,fontWeight:FontWeight.w700))),
+                    style: TextStyle(
+                        color: Color(0xff0D0428),
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700))),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 100),
               child: Row(
@@ -75,18 +84,19 @@ class _SelfExamScreenState extends State<SelfExamScreen> {
               width: 315,
               height: 60,
               child: Card(
-                shape:RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                     side: const BorderSide(
                       color: Color(0xff55C97C),
-                    )) ,
+                    )),
                 child: TextFormField(
                   decoration: const InputDecoration(
                       hintText: 'Tell us how you are feeling today?',
-                      border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(30)))),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30)))),
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
-                    if (value.isEmpty || !value.contains('@')) {
+                    if (value!.isEmpty || !value.contains('@')) {
                       return 'Invalid email!';
                     }
                     return null;
@@ -95,38 +105,39 @@ class _SelfExamScreenState extends State<SelfExamScreen> {
                 ),
               ),
             ),
-             Column(
-                children: [
-                  EmojiInputs(),
-                  MaterialButton(
-                    padding: const EdgeInsets.fromLTRB(137.5, 15, 137.5, 15),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                        side: const BorderSide(
-                          color: Color(0xff55C97C),
-                        )),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(HospitalScreen.routeName);
-                    },
-                    color: const Color(0xff55C97C),
-                    child: const Text('Submit',style: TextStyle(color: Colors.white),),
+            Column(
+              children: [
+                EmojiInputs(),
+                MaterialButton(
+                  padding: const EdgeInsets.fromLTRB(137.5, 15, 137.5, 15),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                      side: const BorderSide(
+                        color: Color(0xff55C97C),
+                      )),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+                  },
+                  color: const Color(0xff55C97C),
+                  child: const Text(
+                    'Submit',
+                    style: TextStyle(color: Colors.white),
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(HospitalScreen.routeName);
-                    },
-                    child:const Text(
-                      'Skip',
-                      style: TextStyle(color: Color(0xff0D0428)),
-                    ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(color: Color(0xff0D0428)),
                   ),
-
-
-                ],
-              ),
+                ),
+              ],
+            ),
           ],
+        ),
       ),
-    ),
-        ));
+    ));
   }
 }

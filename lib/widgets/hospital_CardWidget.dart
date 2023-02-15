@@ -42,7 +42,7 @@ class hospitalCardWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 18.0),
                         child: Text(
-                          UserHospitalCard.hospitalName,
+                          UserHospitalCard.hospitalName!,
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w700),
                         ),
@@ -53,7 +53,7 @@ class hospitalCardWidget extends StatelessWidget {
                             "Name: ",
                             style: TextStyle(color: Colors.white),
                           ),
-                          Text(UserHospitalCard.patientName,style: TextStyle(color: Colors.black))
+                          Text(UserHospitalCard.patientName!,style: TextStyle(color: Colors.black))
                         ],
                       ),
                       Row(
@@ -71,7 +71,7 @@ class hospitalCardWidget extends StatelessWidget {
                             "Date of birth: ",
                             style: TextStyle(color: Colors.white),
                           ),
-                          Text(DateFormat('y-M-d').format(UserHospitalCard.date),style: TextStyle(color: Colors.black))
+                          Text(DateFormat('y-M-d').format(UserHospitalCard.date!),style: TextStyle(color: Colors.black))
                         ],
                       ),
                       Row(
@@ -80,7 +80,7 @@ class hospitalCardWidget extends StatelessWidget {
                             "Phone: ",
                             style: TextStyle(color: Colors.white),
                           ),
-                          Text(UserHospitalCard.phone,style: TextStyle(color: Colors.black),),
+                          Text(UserHospitalCard.phone!,style: TextStyle(color: Colors.black),),
 
                         ],
                       ),

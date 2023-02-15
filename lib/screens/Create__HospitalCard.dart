@@ -20,17 +20,19 @@ class CreateHospitalCard extends StatefulWidget {
 class _CreateHospitalCardState extends State<CreateHospitalCard> {
   final _form = GlobalKey<FormState>();
   var _selectedDate = 'date of birth';
+  var _firstName;
+  var _lastName;
   HospitalCardForm hospitalCardForm = HospitalCardForm();
-  DateTime _date;
+  DateTime? _date;
 
   void _saveForm() {
-    final isValid = _form.currentState.validate();
+    final isValid = _form.currentState!.validate();
 
     if (!isValid) {
       return;
     }
 
-    _form.currentState.save();
+    _form.currentState!.save();
 
     final card = HospitalCard(
         hospitalName: hospitalCardForm.hospitalName,
@@ -51,7 +53,8 @@ class _CreateHospitalCardState extends State<CreateHospitalCard> {
 
   @override
   Widget build(BuildContext context) {
-    final String hospitalName = ModalRoute.of(context).settings.arguments;
+    final String hospitalName =
+        ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
       appBar: MedPaddyAppBar(),
@@ -92,13 +95,13 @@ class _CreateHospitalCardState extends State<CreateHospitalCard> {
                                           .tertiary)),
                               textInputAction: TextInputAction.next,
                               validator: (value) {
-                                if (value.isEmpty) {
+                                if (value!.isEmpty) {
                                   return 'Please enter your first names';
                                 }
                                 return null;
                               },
                               onSaved: (value) {
-                                hospitalCardForm.patientName = "$value ";
+                                _firstName = "$value";
                               },
                             ),
                             TextFormField(
@@ -110,13 +113,15 @@ class _CreateHospitalCardState extends State<CreateHospitalCard> {
                                             .tertiary)),
                                 textInputAction: TextInputAction.next,
                                 validator: (value) {
-                                  if (value.isEmpty) {
+                                  if (value!.isEmpty) {
                                     return 'Please provide enter your last name';
                                   }
                                   return null;
                                 },
                                 onSaved: (value) {
-                                  hospitalCardForm.patientName += value;
+                                  _lastName = "$value";
+                                  hospitalCardForm.patientName =
+                                      "$_firstName $_lastName";
                                   hospitalCardForm.hospitalName = hospitalName;
                                 }),
                             TextFormField(
@@ -128,7 +133,7 @@ class _CreateHospitalCardState extends State<CreateHospitalCard> {
                                             .tertiary)),
                                 textInputAction: TextInputAction.next,
                                 validator: (value) {
-                                  if (value.isEmpty ||
+                                  if (value!.isEmpty ||
                                       double.tryParse(value) == null ||
                                       double.parse(value) == 0) {
                                     return 'Please provide a valid phone number';
@@ -151,21 +156,24 @@ class _CreateHospitalCardState extends State<CreateHospitalCard> {
                                   FocusManager.instance.primaryFocus?.unfocus();
 
                                   DatePicker.showDatePicker(context,
-                                      showTitleActions: true, onChanged: (date) {
+                                      showTitleActions: true,
+                                      onChanged: (date) {
                                     print('change $date');
                                   }, onConfirm: (date) {
                                     setState(() {
-                                      _selectedDate = DateFormat('y-M-d').format(date);
+                                      _selectedDate =
+                                          DateFormat('y-M-d').format(date);
                                       _date = date;
                                     });
-                                    FocusManager.instance.primaryFocus?.unfocus();
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
                                     print('confirm $date');
                                   },
                                       currentTime: DateTime.now(),
                                       locale: LocaleType.en);
                                 },
                                 validator: (value) {
-                                  if (value.isEmpty) {
+                                  if (value!.isEmpty) {
                                     return 'Please provide a date of birth';
                                   }
                                   return null;

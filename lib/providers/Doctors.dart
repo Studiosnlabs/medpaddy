@@ -62,7 +62,7 @@ class Doctors {
 
   }
 
-  Doctor findById(String id){
+  Doctor findById(String? id){
     return getDoctors.firstWhere((doc) => doc.name == id);
   }
 

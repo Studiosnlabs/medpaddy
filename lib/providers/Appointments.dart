@@ -17,8 +17,8 @@ class Appointments with ChangeNotifier {
     return [..._userAppointments];
   }
 
-  void addAppointment(String doctorName, DateTime date, String specialty,
-      String timePeriod, String gender) {
+  void addAppointment(String? doctorName, DateTime? date, String? specialty,
+      String? timePeriod, String? gender) {
     final newAppointment = Appointment(
         doctorName: doctorName,
         specialty: specialty,

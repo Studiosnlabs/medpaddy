@@ -6,12 +6,12 @@ import 'package:medpaddy/providers/Appointments.dart';
 import 'package:medpaddy/screens/Appointments_Screen.dart';
 
 class scheduleCard extends StatefulWidget {
-  final DateTime scheduleDate;
-  final String timeRange;
-  final String doctorName;
-  final String speciality;
-  final String gender;
-  final String hospital;
+  final DateTime? scheduleDate;
+  final String? timeRange;
+  final String? doctorName;
+  final String? speciality;
+  final String? gender;
+  final String? hospital;
 
   scheduleCard(
       {this.scheduleDate,
@@ -26,7 +26,7 @@ class scheduleCard extends StatefulWidget {
 }
 
 class _scheduleCardState extends State<scheduleCard> {
-  Color _bgColor;
+  Color? _bgColor;
 
   @override
   void initState() {
@@ -60,15 +60,15 @@ class _scheduleCardState extends State<scheduleCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  DateFormat('EEEE').format(widget.scheduleDate),
+                  DateFormat('EEEE').format(widget.scheduleDate!),
                   style: (TextStyle(fontSize: 24, color: Colors.white)),
                 ),
                 Text(
-                  DateFormat('y-M-d').format(widget.scheduleDate),
+                  DateFormat('y-M-d').format(widget.scheduleDate!),
                   style: (TextStyle(fontSize: 16, color: Colors.white)),
                 ),
                 Text(
-                  widget.timeRange,
+                  widget.timeRange!,
                   style: TextStyle(color: Colors.white),
                 ),
                 Container(

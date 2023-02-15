@@ -16,7 +16,7 @@ class AppointmentDoctors extends StatefulWidget {
 
 class _AppointmentDoctorsState extends State<AppointmentDoctors> {
   var docList = Doctors().getDoctors;
-  Color _bgColor;
+  Color? _bgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _AppointmentDoctorsState extends State<AppointmentDoctors> {
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: Text(
-              "Book an appointment ",
+              "Book an appointment",
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
           ),

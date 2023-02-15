@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class DoctorApopointmentCard extends StatefulWidget {
 
-  final String doctorName;
-  final String speciality;
-  final String gender;
+  final String? doctorName;
+  final String? speciality;
+  final String? gender;
 
 
   DoctorApopointmentCard({this.doctorName, this.speciality, this.gender});
@@ -18,7 +18,7 @@ class DoctorApopointmentCard extends StatefulWidget {
 
 class _DoctorApopointmentCardState extends State<DoctorApopointmentCard> {
 
-  Color _bgColor;
+  Color? _bgColor;
 
   @override
   void initState() {
@@ -56,7 +56,7 @@ class _DoctorApopointmentCardState extends State<DoctorApopointmentCard> {
                       backgroundColor: Colors.white,
                       radius: 40.0,
                       child: Image.asset(
-                        widget.gender,
+                        widget.gender!,
                         fit: BoxFit.cover,
                       )),
                 ),
@@ -65,13 +65,13 @@ class _DoctorApopointmentCardState extends State<DoctorApopointmentCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      widget.doctorName,
+                      widget.doctorName!,
                       style: TextStyle(
                           fontSize: 32, fontWeight: FontWeight.w700,color: Colors.white),
                     ),
                     Row(
                       children: <Widget>[
-                        Text(widget.speciality,style:TextStyle(
+                        Text(widget.speciality!,style:TextStyle(
                           fontSize: 20,color: Colors.white),
                         ) ,
                       ],

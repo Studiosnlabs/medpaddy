@@ -4,9 +4,9 @@ import 'package:flutter_svg/svg.dart';
 class doctorsAppbar extends StatelessWidget implements PreferredSizeWidget {
 // For appointment
 
-  final String gender;
-  final String name;
-  final String speciality;
+  final String? gender;
+  final String? name;
+  final String? speciality;
 
   doctorsAppbar({this.gender, this.name, this.speciality});
 
@@ -19,9 +19,9 @@ class doctorsAppbar extends StatelessWidget implements PreferredSizeWidget {
             margin: EdgeInsets.only(left: 20,bottom: 70),
               child: Column(
                 children: <Widget>[
-                  CircleAvatar(child:Image.asset(gender) ,radius: 30),
-                  Text(name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27,color: Colors.white),),
-                  Text(speciality,style: TextStyle(color: Colors.white),)
+                  CircleAvatar(child:Image.asset(gender!) ,radius: 30),
+                  Text(name!,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27,color: Colors.white),),
+                  Text(speciality!,style: TextStyle(color: Colors.white),)
                 ],
               )),
           preferredSize: Size.fromHeight(kToolbarHeight)

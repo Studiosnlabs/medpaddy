@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class UsersAppointmentCard extends StatefulWidget {
-  final String doctorName;
-  final String speciality;
-  final String gender;
-  final String timeRange;
-  final DateTime date;
+  final String? doctorName;
+  final String? speciality;
+  final String? gender;
+  final String? timeRange;
+  final DateTime? date;
 
   UsersAppointmentCard(
       {this.doctorName,
@@ -22,7 +22,7 @@ class UsersAppointmentCard extends StatefulWidget {
 }
 
 class _UsersAppointmentCardState extends State<UsersAppointmentCard> {
-  Color _bgColor;
+  Color? _bgColor;
 
   @override
   void initState() {
@@ -93,7 +93,7 @@ class _UsersAppointmentCardState extends State<UsersAppointmentCard> {
                       backgroundColor: Colors.white,
                       radius: 40.0,
                       child: Image.asset(
-                        widget.gender,
+                        widget.gender!,
                         fit: BoxFit.cover,
                       )),
                 ),
@@ -101,20 +101,20 @@ class _UsersAppointmentCardState extends State<UsersAppointmentCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      widget.doctorName,
+                      widget.doctorName!,
                       style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.w700,
                           color: Colors.white),
                     ),
                     Text(
-                      widget.speciality,
+                      widget.speciality!,
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
-                    Text(DateFormat('y-M-d').format(widget.date),
+                    Text(DateFormat('y-M-d').format(widget.date!),
                         style: (TextStyle(fontSize: 16, color: Colors.white))),
                     Text(
-                      widget.timeRange,
+                      widget.timeRange!,
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ],

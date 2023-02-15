@@ -11,7 +11,7 @@ class HospitalCardsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String hospitalName = ModalRoute.of(context).settings.arguments;
+    final String? hospitalName = ModalRoute.of(context)!.settings.arguments as String?;
     final cards = Provider.of<HospitalCardProvider>(context, listen: true)
         .getHospitalCards;
 
@@ -56,6 +56,7 @@ class HospitalCardsScreen extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(80.0)),
           ),
           child: IconButton(
+            onPressed: (){},
             icon: Icon(Icons.add),
           ),
         ),

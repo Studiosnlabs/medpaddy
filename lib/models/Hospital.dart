@@ -8,7 +8,7 @@ class Hospital {
   final String workingHours;
   final String logo;
 
-  Hospital({@required this.id,@required this.name,@required  this.location,@required  this.gps,@required  this.workingHours,@required  this.logo});
+  Hospital({required this.id,required this.name,required  this.location,required  this.gps,required  this.workingHours,required  this.logo});
 
 
 

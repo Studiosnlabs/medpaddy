@@ -13,7 +13,7 @@ class BookAppointmentScreen extends StatefulWidget {
 class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   @override
   Widget build(BuildContext context) {
-    final String docName = ModalRoute.of(context).settings.arguments;
+    final String? docName = ModalRoute.of(context)!.settings.arguments as String?;
     var docList = Doctors().findById(docName);
     var schedules = docList.schedules;
     return Stack(

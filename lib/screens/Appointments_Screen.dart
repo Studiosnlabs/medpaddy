@@ -10,9 +10,11 @@ class AppointmentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String hospitalName = ModalRoute.of(context).settings.arguments;
-   final appointments= Provider.of<Appointments>(context, listen: true).getAppointments;
-   print(appointments);
+    final String? hospitalName =
+        ModalRoute.of(context)!.settings.arguments as String?;
+    final appointments =
+        Provider.of<Appointments>(context, listen: true).getAppointments;
+    print(appointments);
 
     return Scaffold(
       appBar: MedPaddyAppBar(),
@@ -21,49 +23,49 @@ class AppointmentScreen extends StatelessWidget {
               child: Text('There are no appointments yet'),
             )
           : Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Your appointments at-'),
-                  MaterialButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(hospitalName!=null?hospitalName:appointments[0].hospital),
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .secondary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Your appointments at-'),
+                    MaterialButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(hospitalName != null
+                          ? hospitalName
+                          : appointments[0].hospital!),
+                      color: Theme.of(context).colorScheme.secondary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Consumer<Appointments>(
-
-                builder: (ctx,appointmentData,child) {
+                  ],
+                ),
+                Consumer<Appointments>(builder: (ctx, appointmentData, child) {
                   return Expanded(
                     child: ListView.builder(
-                        itemBuilder: (ctx, index) {
-                          return UsersAppointmentCard(
-                            doctorName: appointmentData.getAppointments[index].doctorName,
-                            speciality: appointmentData.getAppointments[index].specialty,
-                            gender: appointmentData.getAppointments[index].gender,
-                            timeRange: appointmentData.getAppointments[index].timePeriod,
-                            date: appointmentData.getAppointments[index].date,
-                          );
-                        },
-                        itemCount: appointmentData.getAppointments.length,
-                      ),
+                      itemBuilder: (ctx, index) {
+                        return UsersAppointmentCard(
+                          doctorName:
+                              appointmentData.getAppointments[index].doctorName,
+                          speciality:
+                              appointmentData.getAppointments[index].specialty,
+                          gender: appointmentData.getAppointments[index].gender,
+                          timeRange:
+                              appointmentData.getAppointments[index].timePeriod,
+                          date: appointmentData.getAppointments[index].date,
+                        );
+                      },
+                      itemCount: appointmentData.getAppointments.length,
+                    ),
                   );
-                }
-              ),
-            ],
-          ),
+                }),
+              ],
+            ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+
           Navigator.of(context)
               .pushNamed(AppointmentDoctors.routeName, arguments: hospitalName);
         },
@@ -84,6 +86,11 @@ class AppointmentScreen extends StatelessWidget {
           ),
           child: IconButton(
             icon: Icon(Icons.add),
+            onPressed: () {
+              print('pushed');
+              Navigator.of(context)
+                  .pushNamed(AppointmentDoctors.routeName, arguments: hospitalName);
+            },
           ),
         ),
       ),

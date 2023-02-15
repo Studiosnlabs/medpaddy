@@ -23,7 +23,7 @@ class CustomIcons {
   CustomIcons._();
 
   static const _kFontFam = 'CustomIcons';
-  static const  _kFontPkg = null;   //remove string?
+  static const  dynamic _kFontPkg = null;   //remove string?
 
   static const IconData emergency = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData help = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medpaddy/providers/Hospitals.dart';
+import 'package:medpaddy/screens/Appointments_Screen.dart';
+import 'package:medpaddy/screens/ConnectHospital_Screen.dart';
 import 'package:medpaddy/screens/Hospitals_Options_Screen.dart';
 import 'package:medpaddy/widgets/app_drawer.dart';
 import 'package:medpaddy/widgets/medPaddyAppBar.dart';
@@ -16,25 +18,29 @@ class HospitalScreen extends StatefulWidget {
 class _HospitalScreenState extends State<HospitalScreen> {
   var hosList = Hospitals().getHospitals;
 
+
   @override
   Widget build(BuildContext context) {
+    final String? args = ModalRoute.of(context)!.settings.arguments as String?;
     return Scaffold(
       appBar: MedPaddyAppBar(),
       drawer: AppDrawer(),
-      bottomNavigationBar: bottomNavBar(),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: Text("Select a hospital to get started",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
           ),
-          Container(width: 398,height: 156,child: Image.asset('assets/images/adbanner.jpg'),padding: EdgeInsets.all(8.0)),
           Expanded(
             child: ListView.builder(
                 itemBuilder: (ctx, index) {
                   return InkWell(
                     onTap: (){
-                      Navigator.of(context).pushNamed(HospitalOptionsScreen.routeName,arguments: hosList[index].name);
+                     if(args=='connect'){
+                       Navigator.of(context).pushNamed(ConnectHospital.routeName);
+                     } else if(args=='appointment'){
+                       Navigator.of(context).pushNamed(AppointmentScreen.routeName,arguments: hosList[index].name);
+                     }
                     },
                     child: Container(
                       width: 300,

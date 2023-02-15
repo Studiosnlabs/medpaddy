@@ -10,7 +10,7 @@ class HospitalOptionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String hospitalName = ModalRoute.of(context).settings.arguments;
+    final String? hospitalName = ModalRoute.of(context)!.settings.arguments as String?;
     final Widget appointmentIcon = SvgPicture.asset(
         'assets/images/appointmentIcon.svg',
         semanticsLabel: 'Appointment Icon');

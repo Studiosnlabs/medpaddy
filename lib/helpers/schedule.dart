@@ -11,9 +11,9 @@ class Schedule {
 
   Schedule(
       {
-        @required this.date,
-     @required this.timeRange,
-     @required this.maxCapacity,
+        required this.date,
+     required this.timeRange,
+     required this.maxCapacity,
       this.numberOfBookings=0,
       this.isAvailable=true}
       );

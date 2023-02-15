@@ -1,10 +1,10 @@
 class Appointment {
-  final String doctorName;
-  final String gender;
-  final String specialty;
-  final DateTime date;
-  final String timePeriod;
-  final String hospital;
+  final String? doctorName;
+  final String? gender;
+  final String? specialty;
+  final DateTime? date;
+  final String? timePeriod;
+  final String? hospital;
 
   Appointment(
       {this.doctorName,

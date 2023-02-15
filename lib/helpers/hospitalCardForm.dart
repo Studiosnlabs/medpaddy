@@ -1,12 +1,10 @@
 
-
-
 class HospitalCardForm {
-  String hospitalName;
-  String patientName;
-  String cardNumber;
-  DateTime date;
-  String phone;
+  String? hospitalName;
+  String? patientName;
+  String? cardNumber;
+  DateTime? date;
+  String? phone;
 
   HospitalCardForm(
       {this.hospitalName,

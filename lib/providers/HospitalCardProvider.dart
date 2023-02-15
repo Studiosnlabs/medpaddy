@@ -15,8 +15,8 @@ class HospitalCardProvider with ChangeNotifier {
     return [..._list];
   }
 
-  void AddHospitalCard(String hospitalName, String patientName,
-      String cardNumber, DateTime date, String phone) {
+  void AddHospitalCard(String? hospitalName, String? patientName,
+      String cardNumber, DateTime? date, String? phone) {
     final newCard = HospitalCard(
         hospitalName: hospitalName,
         patientName: patientName,
