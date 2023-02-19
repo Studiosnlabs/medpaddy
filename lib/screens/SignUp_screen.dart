@@ -109,9 +109,8 @@ class _SignUpState extends State<SignUp> {
 
                             }
 
-                            if (phoneNumberField.textEntered!.length < 10 ||
-                                phoneNumberField.textEntered!.length > 10 ||
-                                phoneNumberField.textEntered!.startsWith('0')) {
+                            if (phoneNumberField.textEntered!.length !=10 ||
+                                !phoneNumberField.textEntered!.startsWith('0')) {
                               final snackBar = SnackBar(
                                 content:
                                     Text('Please enter a valid phone number'),
@@ -123,8 +122,20 @@ class _SignUpState extends State<SignUp> {
                               return;
                             }
 
+                            if (password_field.textEntered!.isEmpty) {
+                              final snackBar = SnackBar(
+                                content: Text('Please enter a valid pin'),
+                                backgroundColor: Theme.of(context).errorColor,
+                              );
+
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                              return;
+                            }
+
+
                             if (password_field.textEntered !=
-                                confirmPassword_field) {
+                                confirmPassword_field.textEntered) {
                               final snackBar = SnackBar(
                                 content: Text('Your pins do not match'),
                                 backgroundColor: Theme.of(context).errorColor,

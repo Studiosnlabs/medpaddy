@@ -53,6 +53,7 @@ dev_dependencies:
   workmanager: ^0.5.1
   flutter_launcher_icons: ^0.11.0
   flutter_native_splash: ^2.2.16
+  smooth_page_indicator: ^1.0.1
 
 flutter_icons:
   android: true
@@ -118,6 +119,9 @@ flutter:
     - assets/images/adA.png
     - assets/images/adB.png
     - assets/images/pillicon.png
+    - assets/images/prescritionstory.png
+    - assets/images/chatwithdoctorstory.png
+    - assets/images/bookappointmentstory.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -104,13 +104,23 @@ class _SignInScreenState extends State<SignInScreen> {
                                 color: Theme.of(context).colorScheme.tertiary,
                               )),
                           onPressed: () {
-                            if (phoneNumberField.textEntered!.length < 10 ||
-                                phoneNumberField.textEntered!.length > 10 ||
-                                phoneNumberField.textEntered!.startsWith('0') ||
+                            if (phoneNumberField.textEntered!.length !=10 ||
+                                !phoneNumberField.textEntered!.startsWith('0') ||
                                 phoneNumberField.textEntered!.isEmpty) {
                               final snackBar = SnackBar(
                                 content:
                                     Text('Please enter a valid phone number'),
+                                backgroundColor: Theme.of(context).errorColor,
+                              );
+
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                              return;
+                            }
+
+                            if (password_field.textEntered!.isEmpty) {
+                              final snackBar = SnackBar(
+                                content: Text('Please enter a valid pin'),
                                 backgroundColor: Theme.of(context).errorColor,
                               );
 
